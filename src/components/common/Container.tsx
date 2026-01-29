@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container as MuiContainer, ContainerProps } from '@mui/material';
+import type { ContainerProps } from '@mui/material';
+import { Container as MuiContainer } from '@mui/material';
 
 type Props = ContainerProps & {
   children: React.ReactNode;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Container } from '../components/common/Container';
 import { SectionHeader } from '../components/ui/SectionHeader';
@@ -60,7 +60,7 @@ export const Projects: React.FC = () => {
 
         <Grid container spacing={3}>
           {projects.map((project) => (
-            <Grid item xs={12} sm={6} md={4} key={project.title}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={project.title}>
               <ProjectCard
                 title={project.title}
                 summary={project.problem}
