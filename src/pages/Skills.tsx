@@ -137,7 +137,7 @@ export const Skills: React.FC = () => {
               sx={{
                 borderRadius: 4,
                 borderColor: 'divider',
-                bgcolor: 'rgba(240,248,255,0.95)',
+                bgcolor: 'rgba(17, 5, 20, 0.95)',
                 p: 2.5,
               }}
             >
@@ -159,7 +159,7 @@ export const Skills: React.FC = () => {
                   flex: 1,
                   borderRadius: 4,
                   borderColor: 'divider',
-                  bgcolor: 'rgba(240,248,255,0.9)',
+                  bgcolor: 'rgba(17, 5, 20, 0.95)',
                   p: 2.5,
                 }}
               >
@@ -175,7 +175,7 @@ export const Skills: React.FC = () => {
                   flex: 1,
                   borderRadius: 4,
                   borderColor: 'divider',
-                  bgcolor: 'rgba(240,248,255,0.9)',
+                  bgcolor: 'rgba(17, 5, 20, 0.95)',
                   p: 2.5,
                 }}
               >

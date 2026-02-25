@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Typography, Grid } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import { Container } from '../components/common/Container';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { ProjectCard } from '../components/ui/ProjectCard';
@@ -9,32 +8,34 @@ type Project = {
   title: string;
   problem: string;
   tech: string[];
+  githubUrl: string;
 };
 
 const projects: Project[] = [
   {
-    title: 'Full-stack university website',
+    title: 'Freelance invoice & payment tracker',
     problem:
-      'A university needed a modern platform for courses, departments, and student information that could grow with new requirements over time.',
-    tech: ['Django', 'Django REST', 'PostgreSQL', 'React'],
+      'Engineered a VAT-compliant financial system with automatic 15% VAT computation and ZAR currency handling using cents storage to eliminate rounding errors, secured with JWT authentication, refresh token rotation, and hardened HTTP security headers.',
+    tech: ['TypeScript', 'React', 'Express.js', 'Bun.js', 'Prisma ORM', 'PostgreSQL'],
+    githubUrl: 'https://github.com/Simphiwe-Nhlabati/payflow_invoice-payment-tracker', 
   },
   {
-    title: 'News application',
+    title: 'High-precision expense settlement',
     problem:
-      'Building a robust news application that can aggregate, filter, and surface stories in a way that stays fast and reliable under changing content.',
-    tech: ['Django', 'APIs', 'PostgreSQL', 'Tailwind CSS'],
+      'Designed a double-entry ledger for shared expense tracking using Drizzle ORM and PostgreSQL, combining Argon2id password hashing, JWT refresh rotation, POPIA-aligned audit logging, and idempotent, rate-limited APIs for reliability.',
+    tech: ['React', 'Bun.js', 'Hono.js', 'TypeScript', 'Drizzle ORM', 'PostgreSQL', 'Vitest'],
+    githubUrl: 'https://github.com/Simphiwe-Nhlabati/Expense-Sharing_Settlement',
   },
   {
-    title: 'E-commerce platform',
+    title: 'University web application',
     problem:
-      'Creating a full-stack e-commerce experience with product browsing, carts, and checkout flows while keeping the codebase maintainable.',
-    tech: ['Django', 'Django REST', 'Stripe (concept)', 'Responsive UI'],
+      'Structured a modular NestJS backend with service-oriented logic and role-based access control, backed by TypeORM and MySQL for relational data (students, teachers, courses), and a high-performance React/Vite UI with custom hooks and Playwright-tested flows.',
+    tech: ['React', 'Vite', 'NestJS', 'Node.js/Bun.js', 'TypeORM', 'MySQL', 'Playwright'],
+    githubUrl: 'https://github.com/Simphiwe-Nhlabati/University-Website-Nest.js',
   },
 ];
 
 export const Projects: React.FC = () => {
-  const navigate = useNavigate();
-
   return (
     <Box
       sx={{
@@ -65,7 +66,7 @@ export const Projects: React.FC = () => {
                 title={project.title}
                 summary={project.problem}
                 tech={project.tech}
-                onViewProject={() => navigate('/projects/university')}
+                onViewProject={() => window.open(project.githubUrl, '_blank', 'noreferrer')}
               />
             </Grid>
           ))}

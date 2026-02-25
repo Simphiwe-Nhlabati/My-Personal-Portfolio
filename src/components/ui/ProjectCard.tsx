@@ -47,7 +47,7 @@ export const ProjectCard: React.FC<Props> = ({ title, summary, tech, onViewProje
       <CardActions sx={{ px: 2.5, pb: 2.5, pt: 0 }}>
         <Box flexGrow={1} />
         <Button size="small" color="secondary" onClick={onViewProject}>
-          View details
+          View GitHub
         </Button>
       </CardActions>
     </Card>

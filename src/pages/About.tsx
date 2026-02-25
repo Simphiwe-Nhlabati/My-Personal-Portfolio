@@ -38,7 +38,7 @@ export const About: React.FC = () => {
               sx={{
                 borderRadius: 3,
                 borderColor: 'divider',
-                bgcolor: 'rgba(253, 253, 253, 0.9)',
+                bgcolor: 'rgba(143,155,255,0.18)',
                 boxShadow: '0 0 10px 0 rgba(133, 42, 145, 0.81)',
                 transition: 'box-shadow 0.3s ease',
                 '&:hover': {
