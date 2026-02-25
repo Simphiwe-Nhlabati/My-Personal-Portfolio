@@ -20,7 +20,7 @@ export const ProjectCard: React.FC<Props> = ({ title, summary, tech, onViewProje
         borderRadius: 3,
         borderColor: 'divider',
         background:
-          'linear-gradient(135deg, rgba(143,155,255,0.06), rgba(201,160,220,0.04))',
+          'linear-gradient(140deg, rgba(196,165,255,0.08), rgba(244,114,182,0.06))',
       }}
     >
       <CardContent sx={{ flexGrow: 1 }}>

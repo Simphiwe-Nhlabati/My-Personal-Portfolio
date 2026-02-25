@@ -42,5 +42,40 @@ export const theme = createTheme({
         maxWidth: 'lg',
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+          '&:hover': {
+            transform: 'translateY(-4px)',
+            boxShadow: '0 12px 32px rgba(143,155,255,0.15)',
+          },
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          transition: 'transform 0.2s ease',
+          '&:hover': {
+            transform: 'scale(1.05)',
+          },
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          transition: 'all 0.2s ease',
+        },
+      },
+    },
   },
 });

@@ -1,23 +1,23 @@
 export const palette = {
   background: {
-    default: '#F0F8FF', // Alice Blue
-    paper: '#FFFFFF',
+    default: '#050616', // deep night purple
+    paper: '#0B1024',
   },
   primary: {
-    main: '#8F9BFF', // Periwinkle
-    light: '#B0B8FF',
-    dark: '#6A74CC',
+    main: '#C4A5FF', // soft lavender
+    light: '#E0C8FF',
+    dark: '#8B5CF6',
   },
   secondary: {
-    main: '#C9A0DC', // Wisteria
-    light: '#DCB9E8',
-    dark: '#A87ABF',
+    main: '#F472B6', // orchid pink
+    light: '#F9A8D4',
+    dark: '#DB2777',
   },
   text: {
-    primary: '#192132',
-    secondary: '#4F5B73',
+    primary: '#E5E7FF',
+    secondary: '#A5B4FC',
   },
-  divider: '#E0E6F5',
+  divider: '#272A45',
 } as const;
 
 export type AppPalette = typeof palette;

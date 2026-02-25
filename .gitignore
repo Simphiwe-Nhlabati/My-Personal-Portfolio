@@ -15,6 +15,8 @@ dist-ssr
 llm_mui.txt
 info_about_me.txt
 
+frontend_design.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

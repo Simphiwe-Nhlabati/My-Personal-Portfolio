@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
         borderColor: 'divider',
         mt: 6,
         py: 3,
-        bgcolor: 'background.default',
+        bgcolor: 'transparent',
       }}
     >
       <Box
