@@ -33,14 +33,13 @@ export const Navbar: React.FC = () => {
         elevation={0}
         color="transparent"
         sx={{
-          backdropFilter: 'blur(18px)',
-          bgcolor: 'rgba(5, 6, 22, 0.92)',
-          borderBottom: '1px solid',
-          borderColor: 'divider',
+          backdropFilter: 'blur(20px)',
+          bgcolor: 'rgba(10, 10, 15, 0.7)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
           zIndex: (t) => t.zIndex.appBar,
         }}
       >
-        <Toolbar sx={{ maxWidth: 'lg', width: '100%', mx: 'auto' }}>
+        <Toolbar sx={{ maxWidth: 'xl', width: '100%', mx: 'auto', px: { xs: 2, sm: 3 } }}>
           {/* Logo / Name */}
           <Typography
             variant="h6"
@@ -49,18 +48,27 @@ export const Navbar: React.FC = () => {
             sx={{
               flexGrow: 1,
               textDecoration: 'none',
-              fontWeight: 700,
-              letterSpacing: '-0.04em',
-              background: 'linear-gradient(135deg, #C4A5FF 0%, #F472B6 100%)',
+              fontWeight: 800,
+              fontSize: '1.5rem',
+              letterSpacing: '-0.03em',
+              background: 'linear-gradient(135deg, #a78bfa 0%, #2dd4bf 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              position: 'relative',
+              '&::after': {
+                content: '"."',
+                position: 'absolute',
+                color: '#a78bfa',
+                WebkitTextFillColor: '#a78bfa',
+              },
             }}
           >
-            Simphiwe.
+            Simphiwe
           </Typography>
 
           {/* Desktop links */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5 }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
             {links.map((link) => {
               const active = location.pathname === link.path;
               return (
@@ -70,26 +78,26 @@ export const Navbar: React.FC = () => {
                   to={link.path}
                   sx={{
                     textTransform: 'none',
-                    fontWeight: active ? 600 : 400,
-                    color: active ? 'primary.main' : 'text.secondary',
+                    fontWeight: active ? 600 : 500,
+                    color: active ? '#a78bfa' : '#94a3b8',
                     position: 'relative',
                     borderRadius: 999,
                     px: 2.5,
                     py: 1,
-                    '&::after': active
-                      ? {
-                          content: '""',
-                          position: 'absolute',
-                          bottom: 4,
-                          left: '25%',
-                          width: '50%',
-                          height: 3,
-                          borderRadius: 2,
-                          bgcolor: 'primary.main',
-                        }
-                      : {},
+                    fontSize: '0.9rem',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      inset: 0,
+                      borderRadius: 'inherit',
+                      background: 'rgba(167, 139, 250, 0.1)',
+                      opacity: active ? 1 : 0,
+                      transition: 'opacity 0.3s ease',
+                    },
                     '&:hover': {
-                      bgcolor: 'rgba(143,155,255,0.08)',
+                      bgcolor: 'rgba(167, 139, 250, 0.08)',
+                      color: '#a78bfa',
                     },
                   }}
                 >
@@ -99,11 +107,42 @@ export const Navbar: React.FC = () => {
             })}
           </Box>
 
+          {/* CTA Button - Desktop */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 2 }}>
+            <MuiButton
+              component={RouterLink}
+              to="/contact"
+              variant="contained"
+              sx={{
+                borderRadius: 999,
+                px: 3,
+                py: 1,
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                background: 'linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%)',
+                boxShadow: '0 4px 15px rgba(167, 139, 250, 0.3)',
+                textTransform: 'none',
+                '&:hover': {
+                  boxShadow: '0 6px 25px rgba(167, 139, 250, 0.5)',
+                  transform: 'translateY(-2px)',
+                },
+              }}
+            >
+              Let's Talk
+            </MuiButton>
+          </Box>
+
           {/* Mobile hamburger */}
           <IconButton
             aria-label="Open menu"
             onClick={() => setDrawerOpen(true)}
-            sx={{ display: { xs: 'flex', md: 'none' }, color: 'text.primary' }}
+            sx={{ 
+              display: { xs: 'flex', md: 'none' }, 
+              color: '#f8fafc',
+              '&:hover': {
+                background: 'rgba(167, 139, 250, 0.1)',
+              },
+            }}
           >
             <Menu size={24} />
           </IconButton>
@@ -117,19 +156,47 @@ export const Navbar: React.FC = () => {
         onClose={() => setDrawerOpen(false)}
         PaperProps={{
           sx: {
-            width: 260,
-            bgcolor: 'background.default',
-            pt: 2,
+            width: 300,
+            bgcolor: 'rgba(10, 10, 15, 0.98)',
+            backdropFilter: 'blur(20px)',
+            borderLeft: '1px solid rgba(255, 255, 255, 0.08)',
           },
         }}
       >
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 2, mb: 1 }}>
-          <IconButton onClick={() => setDrawerOpen(false)} aria-label="Close menu">
-            <X size={22} />
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 2.5, pt: 2 }}>
+          <IconButton 
+            onClick={() => setDrawerOpen(false)} 
+            aria-label="Close menu"
+            sx={{
+              color: '#94a3b8',
+              '&:hover': {
+                background: 'rgba(167, 139, 250, 0.1)',
+                color: '#a78bfa',
+              },
+            }}
+          >
+            <X size={24} />
           </IconButton>
         </Box>
-        <List>
-          {links.map((link) => {
+        
+        <Box sx={{ px: 3, pb: 2 }}>
+          <Typography
+            sx={{
+              fontSize: '1.75rem',
+              fontWeight: 800,
+              background: 'linear-gradient(135deg, #a78bfa 0%, #2dd4bf 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              mb: 4,
+            }}
+          >
+            Menu
+          </Typography>
+        </Box>
+
+        <List sx={{ px: 2 }}>
+          {links.map((link, index) => {
             const active = location.pathname === link.path;
             return (
               <ListItemButton
@@ -139,30 +206,62 @@ export const Navbar: React.FC = () => {
                 onClick={() => setDrawerOpen(false)}
                 selected={active}
                 sx={{
-                  borderRadius: 2,
-                  mx: 1.5,
-                  mb: 0.5,
+                  borderRadius: 3,
+                  mb: 1,
+                  py: 2,
+                  px: 2.5,
+                  transition: 'all 0.3s ease',
+                  animation: `fadeInRight 0.5s ease ${index * 0.05}s both`,
                   '&.Mui-selected': {
-                    bgcolor: 'rgba(143,155,255,0.12)',
+                    background: 'rgba(167, 139, 250, 0.15)',
+                    border: '1px solid rgba(167, 139, 250, 0.2)',
                     '&:hover': {
-                      bgcolor: 'rgba(143,155,255,0.18)',
+                      background: 'rgba(167, 139, 250, 0.2)',
                     },
+                  },
+                  '&:hover': {
+                    background: 'rgba(167, 139, 250, 0.08)',
                   },
                 }}
               >
                 <ListItemText
                   primary={link.label}
                   primaryTypographyProps={{
-                    fontWeight: active ? 600 : 400,
-                    color: active ? 'primary.main' : 'text.primary',
+                    fontWeight: active ? 600 : 500,
+                    color: active ? '#a78bfa' : '#f8fafc',
+                    fontSize: '1rem',
                   }}
                 />
               </ListItemButton>
             );
           })}
         </List>
+
+        {/* Mobile CTA */}
+        <Box sx={{ px: 3, mt: 2 }}>
+          <MuiButton
+            component={RouterLink}
+            to="/contact"
+            variant="contained"
+            onClick={() => setDrawerOpen(false)}
+            fullWidth
+            sx={{
+              borderRadius: 999,
+              py: 1.5,
+              fontSize: '1rem',
+              fontWeight: 600,
+              background: 'linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%)',
+              boxShadow: '0 4px 15px rgba(167, 139, 250, 0.3)',
+              textTransform: 'none',
+              '&:hover': {
+                boxShadow: '0 6px 25px rgba(167, 139, 250, 0.5)',
+              },
+            }}
+          >
+            Let's Talk
+          </MuiButton>
+        </Box>
       </Drawer>
     </>
   );
 };
-

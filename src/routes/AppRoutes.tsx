@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Home } from '../pages/Home';
 import { About } from '../pages/About';
 import { Skills } from '../pages/Skills';
@@ -16,6 +16,8 @@ export const AppRoutes: React.FC = () => {
       <Route path="/projects" element={<Projects />} />
       <Route path="/projects/:id" element={<ProjectDetail />} />
       <Route path="/contact" element={<Contact />} />
+      {/* Catch-all route - redirect to home */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };

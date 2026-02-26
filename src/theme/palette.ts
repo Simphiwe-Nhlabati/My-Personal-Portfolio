@@ -1,23 +1,38 @@
 export const palette = {
   background: {
-    default: '#050616', // deep night purple
-    paper: '#0B1024',
+    default: '#0a0a0f', // deep obsidian
+    paper: '#12121a',
+    elevated: '#1a1a25',
   },
   primary: {
-    main: '#C4A5FF', // soft lavender
-    light: '#E0C8FF',
-    dark: '#8B5CF6',
+    main: '#a78bfa', // electric violet
+    light: '#c4b5fd',
+    dark: '#7c3aed',
+    glow: 'rgba(167, 139, 250, 0.5)',
   },
   secondary: {
-    main: '#F472B6', // orchid pink
-    light: '#F9A8D4',
-    dark: '#DB2777',
+    main: '#2dd4bf', // teal cyan
+    light: '#5eead4',
+    dark: '#14b8a6',
+    glow: 'rgba(45, 212, 191, 0.4)',
+  },
+  accent: {
+    main: '#f472b6', // hot pink
+    light: '#f9a8d4',
+    dark: '#ec4899',
   },
   text: {
-    primary: '#E5E7FF',
-    secondary: '#A5B4FC',
+    primary: '#f8fafc',
+    secondary: '#94a3b8',
+    muted: '#64748b',
   },
-  divider: '#272A45',
+  divider: '#1e293b',
+  success: {
+    main: '#4ade80',
+  },
+  warning: {
+    main: '#fbbf24',
+  },
 } as const;
 
 export type AppPalette = typeof palette;

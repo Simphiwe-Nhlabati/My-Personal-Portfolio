@@ -6,9 +6,12 @@ import './index.css';
 import App from './App';
 import { theme } from './theme/theme';
 
+// Get the basename from environment or default to root
+const basename = import.meta.env.BASE_URL || '/';
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <App />

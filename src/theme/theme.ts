@@ -23,6 +23,8 @@ export const theme = createTheme({
       secondary: palette.text.secondary,
     },
     divider: palette.divider,
+    success: palette.success,
+    warning: palette.warning,
   },
   typography: {
     fontFamily: typography.fontFamily,
@@ -34,21 +36,21 @@ export const theme = createTheme({
     button: typography.button,
   },
   shape: {
-    borderRadius: 12,
+    borderRadius: 16,
   },
   components: {
     MuiContainer: {
       defaultProps: {
-        maxWidth: 'lg',
+        maxWidth: 'xl',
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+          transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           '&:hover': {
-            transform: 'translateY(-4px)',
-            boxShadow: '0 12px 32px rgba(143,155,255,0.15)',
+            transform: 'translateY(-8px)',
+            boxShadow: `0 20px 60px -12px ${palette.primary.glow}`,
           },
         },
       },
@@ -56,16 +58,16 @@ export const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+          transition: 'all 0.3s ease',
         },
       },
     },
     MuiChip: {
       styleOverrides: {
         root: {
-          transition: 'transform 0.2s ease',
+          transition: 'all 0.25s ease',
           '&:hover': {
-            transform: 'scale(1.05)',
+            transform: 'scale(1.08)',
           },
         },
       },
@@ -73,7 +75,16 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          transition: 'all 0.2s ease',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            transition: 'all 0.25s ease',
+          },
         },
       },
     },
